@@ -1,57 +1,47 @@
-
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/style.css">
-        <title>Worldle2</title>
-        <script   src="./js/gameplay.js"></script>
-        <!-- <script type="module" type="text/javascript" src='./js/gameplay.js'> </script>  -->
-    </head>
-    <body >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Worldle2</title>
+    <script src="./js/gameplay.js"></script>
+</head>
+
+<body>
     <button class="trigger" style="visibility: hidden;"></button>
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <div id="lost"></div>
+            <a href="/" class="restart" id="Restart">Try again</a>
+        </div>
+    </div>
+    <script>
+        const modal = document.querySelector(".modal");
+        const trigger = document.querySelector(".trigger");
+        const closeButton = document.querySelector(".close-button");
 
-              <div class="modal">
-                <div class="modal-content">
-                    <span class="close-button">×</span>
-                    <div id="lost"></div>
-                    <a href="/" class="restart"   id="Restart">Try again</a>
-                </div>
-            </div>
-    
-        <script>
-              const modal = document.querySelector(".modal");
-  const trigger = document.querySelector(".trigger");
-const closeButton = document.querySelector(".close-button");
-
-
-trigger.addEventListener("click", toggleModal);
-closeButton.addEventListener("click", toggleModal);
-window.addEventListener("click", windowOnClick);
-        </script>
-        <a href="/" class="restart"   id="Restart">Restart</a>
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
+    </script>
+    <a href="/" class="restart" id="Restart">Restart</a>
     </br>
-    <!-- <div class="mapbox"> -->
-      
-        <img id="map" type="svg" class="map"/>
-    <!-- </div> -->
+    <img id="map" type="svg" class="map" />
+    <img id="map" />
+    <div style="justify-content: center; display: flex;">
+        <div id="guesses" class="guesses"> </div>
+    </div>
 
-        <img id="map"/>
-        <div id="guesses" class="guesses" width="500px" style="padding: 0 10px 10px 0;justify-content: center;"> </div>
-      
+    <form autocomplete="off" id="guess-form" class="guess-form">
+        <div class="autocomplete">
+            <input id="myInput" type="text" name="myCountry" placeholder="Country">
+        </div>
+        <input type="submit" class="submit" onclick="guess(event)" style="width:30%;">
+    </form>
 
-        <!-- </form>action="javascript:guess()" > -->
-        <form autocomplete="off" id="guess-form"  style="
-        display: flex;
-        justify-content: center;
-    "> 
-                <div class="autocomplete" style="width:400px;">
-                  <input id="myInput" type="text" name="myCountry" placeholder="Country">
-                </div>
-                <input type="submit" onclick="guess(event)" style="width:100px;">
-    
-              </form>
-          
-    </body>
+</body>
+
 </html>
