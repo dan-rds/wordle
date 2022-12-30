@@ -1,0 +1,17 @@
+{
+  "name": "worldle2",
+  "version": "1.0.0",
+  "description": "Worldle game server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dan-rds",
+  "license": "MIT",
+  "dependencies": {
+    "country-json": "^1.1.4",
+    "csv-parse": "^5.3.3",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
+  }
+}
